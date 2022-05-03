@@ -6,7 +6,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./sass/css/reset.css" />
     <link rel="stylesheet" href="./sass/css/app.css" />
-    <title>P01 - Login Form</title>
+    <title>Login Form</title>
   </head>
-  <body></body>
+  <body>
+    <div class="register">
+      <h1 class="register__title">Create new account</h1>
+      <form action="#" class="register__form">
+        <div class="form-group form-group-1">
+          <input
+            type="text"
+            placeholder="First name"
+            class="form-group__input"
+          />
+          <input
+            type="text"
+            placeholder="Last name"
+            class="form-group__input"
+          />
+        </div>
+        <div class="form-group">
+          <input type="email" placeholder="Email" class="form-group__input" />
+        </div>
+        <div class="form-group">
+          <input
+            type="password"
+            placeholder="Password"
+            class="form-group__input"
+          />
+        </div>
+        <div class="form-group">
+          <p class="tof">
+            <input type="checkbox" id="tos-cb" />
+            <label for="tof_cb"
+              ><span
+                >I agree with
+                <a href="#" class="register__link">Terms of Service</a> and
+                <a href="#" class="register__link">Privacy Policy</a></span
+              ></label
+            >
+          </p>
+        </div>
+        <div class="form-group">
+          <button class="register__register">Register</button>
+        </div>
+        <div class="form-group">
+          <button class="register__lwg">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488 512">
+              <path
+                d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"
+              />
+            </svg>
+            <span>Login with Google</span>
+          </button>
+        </div>
+        <div class="form-group">
+          <p class="register__login">
+            Already a member? <a href="#" class="register__link">Login</a>
+          </p>
+        </div>
+      </form>
+    </div>
+  </body>
 </html>

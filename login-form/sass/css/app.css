@@ -1,3 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;600&display=swap");
+body {
+  background-color: #e5e5e5;
+  color: #fff;
+  font-family: "Lora", serif;
+}
+body .register {
+  width: 1440px;
+  height: 1024px;
+  background-color: #0a0a0a;
+  background-image: url("../../img/splashArt.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right;
+  box-sizing: border-box;
+  padding: 260px 718px 0 100px;
+}
+body .register__link {
+  text-decoration: none;
+  color: #4c4ddc;
+}
+body .register__title {
+  font-size: 64px;
+  font-weight: 600;
+}
+body .register__form {
+  margin: 40px 0 160px 0;
+}
+body .register__form .form-group {
+  margin-bottom: 32px;
+  text-align: center;
+  font-size: 18px;
+}
+body .register__form .form-group__input {
+  box-sizing: border-box;
+  height: 51px;
+  width: 100%;
+  font-family: "Lora", serif;
+  padding: 16px;
+  border-radius: 8px;
+  outline: none;
+  background-color: #0a0a0a;
+  border: 1px solid #2b2b2b;
+  transition: 0.2s linear;
+}
+body .register__form .form-group__input:hover {
+  border: 1px solid #4e4e4e;
+}
+body .register__form .form-group__input::placeholder {
+  color: #9e9e9e;
+  font-size: 16px;
+}
+body .register__form .form-group-1 {
+  display: flex;
+  justify-content: space-between;
+}
+body .register__form .form-group-1 .form-group__input {
+  width: calc(50% - 16px);
+}
 
+.tof #tos-cb {
+  width: 15px;
+  height: 15px;
+}
+.tof span {
+  font-size: 18px;
+}
+
+.register__register {
+  width: 100%;
+  height: 51px;
+  background-color: #4c4ddc;
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 16px;
+  border-radius: 8px;
+}
+
+.register__lwg {
+  width: 100%;
+  font-size: 16px;
+  height: 51px;
+  background-color: #404040;
+  font-weight: 600;
+  color: #fff;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.register__lwg svg {
+  width: 20px;
+  fill: #f4c00b;
+  padding-right: 10px;
+}
+
+input,
+select,
+textarea {
+  color: white;
+}
 
 /*# sourceMappingURL=app.css.map */

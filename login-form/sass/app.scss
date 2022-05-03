@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@400;600&display=swap");
+
+body {
+  background-color: #e5e5e5;
+  color: #fff;
+  font-family: "Lora", serif;
+  .register {
+    width: 1440px;
+    height: 1024px;
+    background-color: #0a0a0a;
+    background-image: url("../../img/splashArt.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: right;
+    box-sizing: border-box;
+    padding: 260px 718px 0 100px;
+    &__link {
+      text-decoration: none;
+      color: #4c4ddc;
+    }
+    &__title {
+      font-size: 64px;
+      font-weight: 600;
+    }
+    &__form {
+      margin: 40px 0 160px 0;
+      .form-group {
+        margin-bottom: 32px;
+        text-align: center;
+        font-size: 18px;
+        &__input {
+          box-sizing: border-box;
+          height: 51px;
+          width: 100%;
+          font-family: "Lora", serif;
+          padding: 16px;
+          border-radius: 8px;
+          outline: none;
+          background-color: #0a0a0a;
+          border: 1px solid #2b2b2b;
+          transition: 0.2s linear;
+          &:hover {
+            border: 1px solid #4e4e4e;
+          }
+          &::placeholder {
+            color: #9e9e9e;
+            font-size: 16px;
+          }
+        }
+      }
+      .form-group-1 {
+        display: flex;
+        justify-content: space-between;
+        .form-group__input {
+          width: calc(50% - 16px);
+        }
+      }
+    }
+  }
+}
+.tof {
+  #tos-cb {
+    width: 15px;
+    height: 15px;
+  }
+  span {
+    font-size: 18px;
+  }
+}
+
+.register__register {
+  width: 100%;
+  height: 51px;
+  background-color: #4c4ddc;
+  font-weight: 600;
+  color: #ffffff;
+  font-size: 16px;
+  border-radius: 8px;
+}
+
+.register__lwg {
+  width: 100%;
+  font-size: 16px;
+  height: 51px;
+  background-color: #404040;
+  font-weight: 600;
+  color: #fff;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  svg {
+    width: 20px;
+    fill: #f4c00b;
+    padding-right: 10px;
+  }
+}
+
+input,
+select,
+textarea {
+  color: white;
+}
