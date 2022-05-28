@@ -5,26 +5,296 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Learn JavaScript</title>
+    <script
+      src="https://unpkg.com/react@18/umd/react.development.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+      crossorigin
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
     <style>
-      body {
+      /* * {
         background-color: #3d3d3d;
-        color: bisque;
+        color: whitesmoke;
+      } */
+      .btn {
+        color: white;
+        padding: 1rem 2rem;
+        text-transform: uppercase;
+        border: none;
+        border-radius: 5rem;
+        background-color: green;
+        transition: all 0.25s linear;
+      }
+      .btn:hover {
+        opacity: 50%;
       }
     </style>
   </head>
   <body>
-    <ul id="title"></ul>
-    <div class="form">
-      <div class="form__group">
-        <input type="text" name="name" placeholder="name" />
-      </div>
-      <div class="form__group">
-        <input type="text" name="description" placeholder="description" />
-      </div>
-      <div class="form__group">
-        <button>send</button>
-      </div>
-    </div>
-    <script type="module" src="app.js"></script>
+    <div id="root"></div>
+    <script type="text/babel">
+      const root = document.getElementById("root");
+      // const listDOM = document.createElement("ul");
+
+      // const liDOM1 = document.createElement("li");
+      // liDOM1.innerHTML = "JavaScript";
+
+      // const liDOM2 = document.createElement("li");
+      // liDOM2.innerHTML = "ReactJS";
+
+      // listDOM.appendChild(liDOM1);
+      // listDOM.appendChild(liDOM2);
+
+      // document.body.appendChild(listDOM);
+
+      // const listReact = React.createElement(
+      //   "ul",
+      //   null,
+      //   React.createElement("li", null, "JavaScript"),
+      //   React.createElement("li", null, "ReactJS")
+      // );
+
+      // const divDom = document.createElement("div");
+      // divDom.classList.add("post-item");
+
+      // const h2Dom = document.createElement("h2");
+      // h2Dom.title = "Hoc reactjs tai f8";
+      // h2Dom.innerHTML = "Hoc react";
+
+      // const pDom = document.createElement("p");
+      // pDom.innerHTML = "hoc reactjs tu co ban den nang cao";
+
+      // divDom.appendChild(h2Dom);
+      // divDom.appendChild(pDom);
+
+      // console.log(divDom);
+
+      // const divReact = React.createElement(
+      //   "div",
+      //   { className: "post-item" },
+      //   React.createElement("h2", { title: "Hoc reactjs tai f8" }, "Hoc react"),
+      //   React.createElement("p", null, "hoc reactjs tu co ban den nang cao")
+      // );
+      // ReactDOM.render(divReact, root);
+
+      // ReactDOM.render(
+      //   React.createElement(
+      //     "ul",
+      //     null,
+      //     React.createElement("li", null, "JavaScript"),
+      //     React.createElement("li", null, "reactjs")
+      //   ),
+      //   root
+      // );
+
+      // const ReactRoot = ReactDOM.createRoot(root);
+      // ReactRoot.render(
+      //   React.createElement(
+      //     "ul",
+      //     null,
+      //     React.createElement("li", null, "JavaScript"),
+      //     React.createElement("li", null, "reactjs")
+      //   )
+      // );
+
+      // const courses = [
+      //   { name: "HTML/CSS" },
+      //   { name: "Responsive web design" },
+      //   { name: "ReactJS" },
+      // ];
+
+      // const ul = (
+      //   <ul>
+      //     {courses.map((course) => {
+      //       return <li>{course.name}</li>;
+      //     })}
+      //   </ul>
+      // );
+
+      // function PostItem() {
+      //   return (
+      //     <div className="post-item">
+      //       <img />
+      //       <h2>ReactJS</h2>
+      //       <p>ABC</p>
+      //       <p>XYZ</p>
+      //     </div>
+      //   );
+      // }
+
+      // const app = (
+      //   <div className="post-list">
+      //     <PostItem />
+      //     <PostItem />
+      //     <PostItem />
+      //     <PostItem />
+      //   </div>
+      // );
+
+      // const courses = [
+      //   {
+      //     id: 7,
+      //     title: "Kiến Thức Nhập Môn IT",
+      //     slug: "lessons-for-newbie",
+      //     description:
+      //       "Để có cái nhìn tổng quan về ngành IT - Lập trình web các bạn nên xem các videos tại khóa này trước nhé.",
+      //     image: "courses/7.png",
+      //     icon: "courses/7/6200b81f52d83.png",
+      //     video_type: "youtube",
+      //     video: "M62l1xA5Eu8",
+      //     old_price: 0,
+      //     price: 0,
+      //     pre_order_price: 0,
+      //     students_count: 65505,
+      //     is_pro: false,
+      //     is_selling: false,
+      //     published_at: "2020-02-10T14:23:13.000000Z",
+      //     is_registered: false,
+      //     user_progress: 0,
+      //     last_completed_at: null,
+      //     image_url: "https://files.fullstack.edu.vn/f8-prod/courses/7.png",
+      //     icon_url:
+      //       "https://files.fullstack.edu.vn/f8-prod/courses/7/6200b81f52d83.png",
+      //     video_url: "https://www.youtube.com/watch?v=M62l1xA5Eu8",
+      //     is_coming_soon: false,
+      //     is_pre_order: false,
+      //     is_published: true,
+      //   },
+      //   {
+      //     id: 2,
+      //     title: "HTML, CSS từ Zero đến Hero",
+      //     slug: "html-css",
+      //     description:
+      //       "Trong khóa này chúng ta sẽ cùng nhau xây dựng giao diện 2 trang web là The Band & Shopee.",
+      //     image: "courses/2.png",
+      //     icon: "courses/2/6200aecea81de.png",
+      //     video_type: "youtube",
+      //     video: "R6plN3FvzFY",
+      //     old_price: 0,
+      //     price: 0,
+      //     pre_order_price: 0,
+      //     students_count: 115121,
+      //     is_pro: false,
+      //     is_selling: false,
+      //     published_at: "2020-02-10T14:23:13.000000Z",
+      //     is_registered: false,
+      //     user_progress: 0,
+      //     last_completed_at: null,
+      //     image_url: "https://files.fullstack.edu.vn/f8-prod/courses/2.png",
+      //     icon_url:
+      //       "https://files.fullstack.edu.vn/f8-prod/courses/2/6200aecea81de.png",
+      //     video_url: "https://www.youtube.com/watch?v=R6plN3FvzFY",
+      //     is_coming_soon: false,
+      //     is_pre_order: false,
+      //     is_published: true,
+      //   },
+      //   {
+      //     id: 3,
+      //     title: "Responsive Với Grid System",
+      //     slug: "responsive-web-design",
+      //     description:
+      //       "Trong khóa này chúng ta sẽ học về cách xây dựng giao diện web responsive với Grid System, tương tự Bootstrap 4.",
+      //     image: "courses/3.png",
+      //     icon: "courses/3/6200afe1240bb.png",
+      //     video_type: "youtube",
+      //     video: "uz5LIP85J5Y",
+      //     old_price: 0,
+      //     price: 0,
+      //     pre_order_price: 0,
+      //     students_count: 23629,
+      //     is_pro: false,
+      //     is_selling: false,
+      //     published_at: "2020-02-10T14:23:13.000000Z",
+      //     is_registered: false,
+      //     user_progress: 0,
+      //     last_completed_at: null,
+      //     image_url: "https://files.fullstack.edu.vn/f8-prod/courses/3.png",
+      //     icon_url:
+      //       "https://files.fullstack.edu.vn/f8-prod/courses/3/6200afe1240bb.png",
+      //     video_url: "https://www.youtube.com/watch?v=uz5LIP85J5Y",
+      //     is_coming_soon: false,
+      //     is_pre_order: false,
+      //     is_published: true,
+      //   },
+      // ];
+
+      // function Course({ title, desc, url, cb }) {
+      //   return (
+      //     <div>
+      //       <img src={url} />
+      //       <h1 onClick={() => cb(title)}>{title}</h1>
+      //       <p>{desc}</p>
+      //     </div>
+      //   );
+      // }
+
+      // function App() {
+      //   const handleClick = (title) => console.log(title);
+      //   return (
+      //     <div>
+      //       {courses.map((item) => {
+      //         return (
+      //           <Course
+      //             key={item.id}
+      //             title={item.title}
+      //             desc={item.description}
+      //             url={item.image_url}
+      //             cb={handleClick}
+      //           />
+      //         );
+      //       })}
+      //     </div>
+      //   );
+      // }
+
+      // const Form = {
+      //   Input() {
+      //     return <input />;
+      //   },
+      //   Checkbox() {
+      //     return <input type="checkbox" />;
+      //   },
+      // };
+
+      // function Button({ title, href, onClick }) {
+      //   let Component = "button";
+      //   const props = {};
+
+      //   if (href) {
+      //     Component = "a";
+      //     props.href = href;
+      //   }
+
+      //   if (onClick) {
+      //     props.onClick = onClick;
+      //   }
+
+      //   return (
+      //     <Component {...props} className="btn">
+      //       {" "}
+      //       {title}
+      //     </Component>
+      //   );
+      // }
+
+      function List({ data, children }) {
+        return <ul>{data.map(children)}</ul>;
+      }
+
+      const animals = ["Cat", "Dog"];
+      function App() {
+        return (
+          <div>
+            <List data={animals}>{(item) => <li>{item}</li>}</List>
+          </div>
+        );
+      }
+
+      const ReactRoot = ReactDOM.createRoot(root);
+      ReactRoot.render(<App />);
+    </script>
   </body>
 </html>
