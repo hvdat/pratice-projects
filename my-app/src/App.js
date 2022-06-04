@@ -1,28 +1,35 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import "./App.css";
 
 function App() {
-  const [job, setJob] = useState("");
-  const [jobs, setJobs] = useState([]);
+  const tabs = ["posts", "albums", "users"];
+  const [post, setPost] = useState([]);
+  const [type, setType] = useState("");
 
-  const handleAdd = () => {
-    if (job !== "") setJobs((prev) => [...prev, job]);
-    setJob("");
-  };
-  const handleRemove = () => {
-    setJobs((prev) => {
-      return prev.filter((item) => prev.indexOf(item) !== prev.length - 1);
-    });
-  };
+  useEffect(() => {
+    fetch(`https://jsonplaceholder.typicode.com/${type}`)
+      .then((res) => res.json())
+      .then((data) => setPost(data));
+  }, [type]);
+
   return (
     <div className="App">
-      <input value={job} onChange={(e) => setJob(e.target.value)} />
-      <button onClick={() => handleAdd()}>Add</button>
-      <button onClick={() => handleRemove(1)}>Remove</button>
-      <ul>
-        {jobs.map((job, idx) => (
-          <li key={idx}>{job}</li>
-        ))}
-      </ul>
+      {tabs.map((tab) => (
+        <button
+          style={type === tab ? { backgroundColor: "pink" } : {}}
+          key={tab}
+          onClick={() => setType(tab)}
+        >
+          {tab}
+        </button>
+      ))}
+      <div>
+        <ul>
+          {post.map((e) => (
+            <li>{e.title || e.name}</li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }
